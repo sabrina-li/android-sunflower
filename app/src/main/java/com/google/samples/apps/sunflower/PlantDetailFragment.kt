@@ -19,6 +19,7 @@ package com.google.samples.apps.sunflower
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -34,6 +35,8 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.samples.apps.sunflower.databinding.FragmentPlantDetailBinding
 import com.google.samples.apps.sunflower.utilities.InjectorUtils
 import com.google.samples.apps.sunflower.viewmodels.PlantDetailViewModel
+
+import com.fullstory.FS
 
 /**
  * A fragment representing a single Plant detail screen.
@@ -62,6 +65,9 @@ class PlantDetailFragment : Fragment() {
                 Snackbar.make(view, R.string.added_plant_to_garden, Snackbar.LENGTH_LONG).show()
             }
         }
+
+        Log.d("fullstory","FSiendity")
+        FS.identify("UIDMOBILE!")
 
         plantDetailViewModel.plant.observe(this, Observer { plant ->
             shareText = if (plant == null) {
