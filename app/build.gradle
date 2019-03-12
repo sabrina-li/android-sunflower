@@ -22,7 +22,7 @@ apply plugin: 'androidx.navigation.safeargs'
 
 apply plugin: 'fullstory'
 fullstory {
-    org "XXX"
+    org "XXXx"
     enabledVariants "all"
 }
 

@@ -67,7 +67,10 @@ class PlantDetailFragment : Fragment() {
         }
 
         Log.d("fullstory","FSiendity")
-        FS.identify("UIDMOBILE!")
+        val vars = HashMap<String, Any>()
+        vars["email"] = "test@gmail.com"
+        vars["displayName"] = "Mobile UserNo1"
+        FS.identify("64ce979e-e602-41bb-a0ab-0c060a47ab8f",vars);
 
         plantDetailViewModel.plant.observe(this, Observer { plant ->
             shareText = if (plant == null) {
