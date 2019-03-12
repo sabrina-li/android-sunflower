@@ -72,6 +72,12 @@ class PlantDetailFragment : Fragment() {
         vars["displayName"] = "Mobile UserNo1"
         FS.identify("64ce979e-e602-41bb-a0ab-0c060a47ab8f",vars);
 
+
+        val setvars = HashMap<String, Any>()
+        setvars["userDevice"] = "Android mobile"
+
+        FS.setUserVars(setvars)
+
         plantDetailViewModel.plant.observe(this, Observer { plant ->
             shareText = if (plant == null) {
                 ""
